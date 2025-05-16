@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WatchMate</string>
+    <string name="welcome_message">Welcome to WatchMate!</string>
+    <string name="button_save_content">Save Content to Watch Later</string>
+    <string name="button_rate_content">Rate Watched Content</string>
+    <string name="title_activity_save_content">SaveContentActivity</string>
+    <string name="title_activity_content_list">ContentListActivity</string>
+</resources>

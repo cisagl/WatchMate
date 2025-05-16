@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="32dp"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\uD83C\uDFAC WatchMate"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnBrowseContents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\uD83D\uDC41\uFE0F Browse Contents"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            android:paddingVertical="14dp"
+            android:elevation="4dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutBrowseOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnWatchLater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\uD83D\uDCCB Watch Later"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/gray"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:id="@+id/btnRatedList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\uD83D\uDCC8 Rated Contents"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/gray"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\u2795 Add New Content"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            android:paddingVertical="14dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutAddOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnSaveContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\uD83D\uDCCC Add to Watch Later"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/gray"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:id="@+id/btnRateContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u2B50 Add Rated Content"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/gray"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
