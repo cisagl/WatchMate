@@ -1,10 +1,8 @@
 package isaoglu.cahit.watchmate.activities
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.slider.Slider
@@ -23,6 +21,8 @@ class UpdateContentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update_content)
 
         contentId = intent.getIntExtra("contentId", -1)
+        val onlyNameUpdate = intent.getBooleanExtra("onlyNameUpdate", false)
+
         if (contentId == -1) {
             Toast.makeText(this, "Invalid content", Toast.LENGTH_SHORT).show()
             finish()
@@ -43,6 +43,11 @@ class UpdateContentActivity : AppCompatActivity() {
                 etName.setText(content.name)
                 slider.value = content.rating
                 tvRating.text = "Rating: ${String.format("%.1f", content.rating)}"
+
+                if (onlyNameUpdate) {
+                    slider.visibility = View.GONE
+                    tvRating.visibility = View.GONE
+                }
             }
         }
 
@@ -54,14 +59,22 @@ class UpdateContentActivity : AppCompatActivity() {
         btnUpdate.setOnClickListener {
             val newName = etName.text.toString().trim()
             val newRating = slider.value
+
             if (newName.isEmpty()) {
                 Toast.makeText(this, "Please enter a name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
             lifecycleScope.launch {
-                content.name = newName
-                content.rating = newRating
-                dao.updateContent(content)
+                val updatedContent = Content(
+                    id = content.id,
+                    name = newName,
+                    rating = if (onlyNameUpdate) content.rating else newRating,
+                    createdAt = content.createdAt
+                )
+
+                dao.updateContent(updatedContent)
+
                 runOnUiThread {
                     Toast.makeText(this@UpdateContentActivity, "Content updated", Toast.LENGTH_SHORT).show()
                     finish()

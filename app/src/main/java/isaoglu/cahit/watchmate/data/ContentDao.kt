@@ -21,5 +21,25 @@ interface ContentDao {
 
     @Query("SELECT * FROM contents WHERE id = :contentId LIMIT 1")
     suspend fun getContentById(contentId: Int): Content
-}
 
+    @Query("SELECT * FROM contents WHERE rating > 0.0 ORDER BY name ASC")
+    suspend fun getRatedSortedByName(): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating > 0.0 ORDER BY rating DESC")
+    suspend fun getRatedSortedByRating(): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating > 0.0 ORDER BY createdAt DESC")
+    suspend fun getRatedSortedByDate(): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating > 0.0 AND name LIKE '%' || :search || '%'")
+    suspend fun searchRatedContents(search: String): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating = 0.0 ORDER BY name ASC")
+    suspend fun getWatchLaterSortedByName(): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating = 0.0 ORDER BY createdAt DESC")
+    suspend fun getWatchLaterSortedByDate(): List<Content>
+
+    @Query("SELECT * FROM contents WHERE rating = 0.0 AND name LIKE '%' || :search || '%'")
+    suspend fun searchWatchLaterContents(search: String): List<Content>
+}

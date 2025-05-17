@@ -5,4 +5,10 @@
     <string name="button_rate_content">Rate Watched Content</string>
     <string name="title_activity_save_content">SaveContentActivity</string>
     <string name="title_activity_content_list">ContentListActivity</string>
+    <string-array name="sort_options">
+        <item>Name</item>
+        <item>Date</item>
+        <item>Rating</item>
+    </string-array>
+
 </resources>

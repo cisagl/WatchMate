@@ -3,37 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="32dp"
+    android:background="@android:color/white"
+    android:padding="24dp"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:paddingBottom="32dp">
 
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="\uD83C\uDFAC WatchMate"
-            android:textSize="28sp"
-            android:textColor="@color/black"
+            android:text="🎬 WatchMate"
+            android:textSize="32sp"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="32dp" />
 
         <Button
             android:id="@+id/btnBrowseContents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\uD83D\uDC41\uFE0F Browse Contents"
+            android:text="👁️ Browse Contents"
             android:textAllCaps="false"
             android:backgroundTint="@color/purple_500"
             android:textColor="@android:color/white"
-            android:layout_marginBottom="8dp"
-            android:paddingVertical="14dp"
-            android:elevation="4dp" />
+            android:layout_marginBottom="12dp"
+            android:padding="16dp"
+            android:elevation="6dp" />
 
         <LinearLayout
             android:id="@+id/layoutBrowseOptions"
@@ -41,40 +42,42 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="24dp">
 
             <Button
                 android:id="@+id/btnWatchLater"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\uD83D\uDCCB Watch Later"
+                android:text="📋 Watch Later"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/gray"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="4dp" />
+                android:backgroundTint="#E0E0E0"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btnRatedList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\uD83D\uDCC8 Rated Contents"
+                android:text="📈 Rated Contents"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/gray"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="4dp" />
+                android:backgroundTint="#E0E0E0"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                android:padding="12dp" />
         </LinearLayout>
 
         <Button
             android:id="@+id/btnAddContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\u2795 Add New Content"
+            android:text="➕ Add New Content"
             android:textAllCaps="false"
             android:backgroundTint="@color/teal_700"
             android:textColor="@android:color/white"
-            android:paddingVertical="14dp"
-            android:elevation="4dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp"
+            android:padding="16dp"
+            android:elevation="6dp" />
 
         <LinearLayout
             android:id="@+id/layoutAddOptions"
@@ -87,21 +90,23 @@
                 android:id="@+id/btnSaveContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\uD83D\uDCCC Add to Watch Later"
+                android:text="📌 Add to Watch Later"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/gray"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="4dp" />
+                android:backgroundTint="#E0E0E0"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btnRateContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\u2B50 Add Rated Content"
+                android:text="⭐ Add Rated Content"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/gray"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="4dp" />
+                android:backgroundTint="#E0E0E0"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                android:padding="12dp" />
         </LinearLayout>
 
     </LinearLayout>
